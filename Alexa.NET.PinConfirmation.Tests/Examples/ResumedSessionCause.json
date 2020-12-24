@@ -1,0 +1,12 @@
+{
+  "type": "ConnectionCompleted",
+  "token": "Some connection token data",
+  "status": {
+    "code": "200",
+    "message": "Successfully performed PIN confirmation"
+  },
+  "result": {
+    "status": "NOT_ACHIEVED",
+    "reason": "VERIFICATION_METHOD_NOT_SETUP"
+  }
+}
