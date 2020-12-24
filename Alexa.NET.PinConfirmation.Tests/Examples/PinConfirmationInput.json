@@ -1,0 +1,8 @@
+{
+  "requestedAuthenticationConfidenceLevel": {
+    "level": 400,
+    "customPolicy": {
+      "policyName": "VOICE_PIN"
+    }
+  }
+}
