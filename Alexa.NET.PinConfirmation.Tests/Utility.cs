@@ -22,10 +22,8 @@ namespace Alexa.NET.PinConfirmation.Tests
 
         public static T ExampleFileContent<T>(string expectedFile)
         {
-            using (var reader = new JsonTextReader(new StringReader(ExampleFileContent(expectedFile))))
-            {
-                return new JsonSerializer().Deserialize<T>(reader);
-            }
+            using var reader = new JsonTextReader(new StringReader(ExampleFileContent(expectedFile)));
+            return new JsonSerializer().Deserialize<T>(reader);
         }
 
         public static string ExampleFileContent(string expectedFile)

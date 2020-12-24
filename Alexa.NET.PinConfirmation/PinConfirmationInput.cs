@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Alexa.NET.ConnectionTasks;
 using Newtonsoft.Json;
 
 namespace Alexa.NET.PinConfirmation
 {
-    public class PinConfirmationInput
+    public class PinConfirmationInput:IConnectionTask
     {
+        public const string AssociatedUri = "connection://AMAZON.VerifyPerson/2";
         [JsonProperty("requestedAuthenticationConfidenceLevel")]
         public RequestedAuthenticationConfidenceLevel RequestedAuthenticationConfidenceLevel { get; set; }
 
@@ -21,5 +20,7 @@ namespace Alexa.NET.PinConfirmation
                 }
             };
         }
+
+        public string ConnectionUri => AssociatedUri;
     }
 }
