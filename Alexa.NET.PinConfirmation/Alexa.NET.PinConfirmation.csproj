@@ -11,6 +11,7 @@
     <RepositoryUrl>https://github.com/stoiveyp/Alexa.NET.PinConfirmation</RepositoryUrl>
     <PackageReleaseNotes>Initial release</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/stoiveyp/Alexa.NET.PinConfirmation</PackageProjectUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,4 +1,5 @@
-﻿using Alexa.NET.ConnectionTasks;
+﻿using System.Linq;
+using Alexa.NET.ConnectionTasks;
 using Alexa.NET.Response.Converters;
 using Newtonsoft.Json;
 
@@ -26,7 +27,10 @@ namespace Alexa.NET.PinConfirmation
 
         public static void AddToConnectionTask()
         {
-            ConnectionTaskConverter.ConnectionTaskConverters.Add(new PinConfirmationInputConverter());
+            if (!ConnectionTaskConverter.ConnectionTaskConverters.OfType<PinConfirmationInputConverter>().Any())
+            {
+                ConnectionTaskConverter.ConnectionTaskConverters.Add(new PinConfirmationInputConverter());
+            }
         }
     }
 }
