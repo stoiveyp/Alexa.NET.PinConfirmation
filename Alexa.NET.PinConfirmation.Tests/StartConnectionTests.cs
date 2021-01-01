@@ -1,5 +1,6 @@
 using System;
 using Alexa.NET.ConnectionTasks;
+using Alexa.NET.Response.Converters;
 using Alexa.NET.Response.Directive;
 using Xunit;
 
@@ -10,6 +11,7 @@ namespace Alexa.NET.PinConfirmation.Tests
         [Fact]
         public void InputCreatesCorrectJSON()
         {
+            PinConfirmationInput.AddToConnectionTask();
             Utility.AssertSerialization<PinConfirmationInput>("PinConfirmationInput.json");
         }
 
@@ -22,7 +24,7 @@ namespace Alexa.NET.PinConfirmation.Tests
         [Fact]
         public void IConnectionTaskWiredSuccessfully()
         {
-            PInConfirmationExtensions.AddPinConfirmation();
+            PinConfirmationInput.AddToConnectionTask();
             Utility.AssertSerialization<IConnectionTask>("PinConfirmationInput.json");
         }
 

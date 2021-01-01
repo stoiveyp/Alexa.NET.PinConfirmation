@@ -1,4 +1,5 @@
 ﻿using Alexa.NET.ConnectionTasks;
+using Alexa.NET.Response.Converters;
 using Newtonsoft.Json;
 
 namespace Alexa.NET.PinConfirmation
@@ -22,5 +23,10 @@ namespace Alexa.NET.PinConfirmation
         }
 
         public string ConnectionUri => AssociatedUri;
+
+        public static void AddToConnectionTask()
+        {
+            ConnectionTaskConverter.ConnectionTaskConverters.Add(new PinConfirmationInputConverter());
+        }
     }
 }

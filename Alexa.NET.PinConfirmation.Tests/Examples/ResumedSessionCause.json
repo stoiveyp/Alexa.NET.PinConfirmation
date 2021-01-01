@@ -2,7 +2,7 @@
   "type": "ConnectionCompleted",
   "token": "Some connection token data",
   "status": {
-    "code": "200",
+    "code": 200,
     "message": "Successfully performed PIN confirmation"
   },
   "result": {

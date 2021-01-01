@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Alexa.NET.Request;
-using Alexa.NET.Request.Type;
+﻿using Alexa.NET.Request.Type;
 using Xunit;
 
 namespace Alexa.NET.PinConfirmation.Tests
@@ -32,7 +28,7 @@ namespace Alexa.NET.PinConfirmation.Tests
         {
             var sessionResult = Utility.ExampleFileContent<SessionResumedRequestCause>("ResumedSessionCause.json");
             var pinResult  = new SessionResumedRequest {Cause = sessionResult}.GetPinResult();
-            Assert.Equal(PinConfirmationStatus.Achieved,pinResult.Status);
+            Assert.Equal(PinConfirmationStatus.NotAchieved,pinResult.Status);
             Assert.Equal(PinConfirmationReason.VerificationMethodNotSetup, pinResult.Reason);
         }
     }
